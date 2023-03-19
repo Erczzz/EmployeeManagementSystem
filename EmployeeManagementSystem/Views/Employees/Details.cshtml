@@ -1,0 +1,48 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Employee Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emp_DOB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_DOB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emp_Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emp_Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.Dept_Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <span>
+        <a asp-action="Edit" asp-route-id="@Model?.Emp_Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-danger">Back to List</a>
+    </span>
+</div>

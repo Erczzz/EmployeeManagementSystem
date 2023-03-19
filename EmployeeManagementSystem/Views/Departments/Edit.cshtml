@@ -1,0 +1,45 @@
+﻿@model EmployeeManagementSystem.Models.Department
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<br/>
+<div class="container" style="background-color: #2D2727; padding: 20px; width: 600px;
+    box-shadow: 12px 25px 40px -8px gba(0,0,0,0.89);
+    -webkit-box-shadow: 12px 25px 40px -8px rgba(0,0,0,0.89);
+    -moz-box-shadow: 12px 25px 40px -8px rgba(0,0,0,0.89);">
+    
+    <br/><h4>Edit Department</h4>
+    <hr />
+    <div class="row">
+        <div >
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Dept_Id" />
+                <div class="form-group">
+                    <label asp-for="Dept_Name" class="control-label"></label>
+                    <input asp-for="Dept_Name" class="form-control" />
+                    <span asp-validation-for="Dept_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br />
+                    <span>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-danger">Back to List</a>
+                    </span>
+                    <br />
+                </div>
+            </form>
+        </div>
+
+            
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
