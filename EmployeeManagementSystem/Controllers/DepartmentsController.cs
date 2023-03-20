@@ -61,7 +61,8 @@ namespace EmployeeManagementSystem.Controllers
                 _context.Add(department);
                 await _context.SaveChangesAsync();
 
-            return View(department);
+            return RedirectToAction(nameof(Index));
+            // return View(department);
         }
 
         // GET: Departments/Edit/5
@@ -108,10 +109,11 @@ namespace EmployeeManagementSystem.Controllers
                     throw;
                 }
             }
-/*            Response.Redirect("Departments");
-            RedirectToAction(nameof(Index));
-  */          
-            return View(department);
+            /*            Response.Redirect("Departments");
+                        RedirectToAction(nameof(Index));
+              */
+            return RedirectToAction(nameof(Index));
+            // return View(department);
         }
 
         // GET: Departments/Delete/5

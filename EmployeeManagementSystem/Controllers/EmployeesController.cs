@@ -64,7 +64,8 @@ namespace EmployeeManagementSystem.Controllers
             RedirectToAction(nameof(Index));
 
             ViewData["Dep_Id"] = new SelectList(_context.Departments, "Dept_Id", "Dept_Name", employee.Dep_Id);
-            return View(employee);
+            return RedirectToAction(nameof(Index));
+            // return View(employee);
         }
 
         // GET: Employees/Edit/5
@@ -81,6 +82,7 @@ namespace EmployeeManagementSystem.Controllers
                 return NotFound();
             }
             ViewData["Dep_Id"] = new SelectList(_context.Departments, "Dept_Id", "Dept_Id", employee.Dep_Id);
+            
             return View(employee);
         }
 
@@ -113,7 +115,8 @@ namespace EmployeeManagementSystem.Controllers
                     }
                 }
             ViewData["Dep_Id"] = new SelectList(_context.Departments, "Dept_Id", "Dept_Id", employee.Dep_Id);
-            return View(employee);
+            return RedirectToAction(nameof(Index));
+            // return View(employee);
         }
 
         // GET: Employees/Delete/5

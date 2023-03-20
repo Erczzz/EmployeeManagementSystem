@@ -9,7 +9,9 @@ namespace EmployeeManagementSystem.Models
         public int Emp_Id { get; set; }
         public string Emp_Name { get; set; }
         public DateTime Emp_DOB { get; set; }
+        [EmailAddress]
         public string Emp_Email { get; set; }
+        [Phone]
         public long Emp_Phone { get; set; }
         [ForeignKey("Department")]
         public int Dep_Id { get; set; }
